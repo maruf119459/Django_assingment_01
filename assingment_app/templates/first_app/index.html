@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+<style>
+    .row-cols-3 .col {
+      flex-basis: 33.33%;
+      max-width: 33.33%;
+    }
+  </style>
+
+{% block title %} Menu Page {% endblock %}
+{% block content %}
+
+  <div class="row row-cols-3 g-4">
+    {% for meal in meals %}
+    <div class="col">
+      <div class="card h-100">
+        <img src="{{ meal.strMealThumb }}" class="card-img-top">
+        <div class="card-body">
+          <h1 class="card-title">{{ meal.strMeal }}</h1>
+          <h3 class="card-text">{{ meal.idMeal }}</h3> 
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+{% endblock content %}
+
+
+
+
